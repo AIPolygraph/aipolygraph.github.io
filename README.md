@@ -1,2 +1,59 @@
-# aipolygraph.github.io
-"Публічний сайт AIPolygraph"
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIPolygraph — Штучний Інтелект для перевірки доброчесності</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f7fa; color: #333; margin: 0; padding: 0; }
+    header { background: #002b45; color: white; padding: 20px; text-align: center; }
+    nav { background: #015c87; display: flex; justify-content: center; flex-wrap: wrap; }
+    nav a { color: white; padding: 15px 20px; text-decoration: none; display: block; }
+    nav a:hover { background: #014566; }
+    main { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+    section { margin-bottom: 40px; }
+    footer { background: #002b45; color: white; text-align: center; padding: 15px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AIPolygraph</h1>
+    <p>Інноваційна система AI-перевірки доброчесності</p>
+  </header>
+  
+  <nav>
+    <a href="#about">Про проєкт</a>
+    <a href="#mvp">Демо</a>
+    <a href="#roadmap">Дорожня карта</a>
+    <a href="#contact">Контакти</a>
+  </nav>
+
+  <main>
+    <section id="about">
+      <h2>Про AIPolygraph</h2>
+      <p>AIPolygraph — це віртуальний поліграф, створений на основі штучного інтелекту для виявлення неправдивих відповідей, ухиляння, маніпуляцій та потенційної корупції. Призначений для державних структур, HR, антикорупційних перевірок і конкурсів.</p>
+    </section>
+
+    <section id="mvp">
+      <h2>Онлайн демо</h2>
+      <p>Тут буде розміщений тестовий модуль поліграфа (MVP) для демонстрації основної логіки перевірки через GPT.</p>
+    </section>
+
+    <section id="roadmap">
+      <h2>Дорожня карта</h2>
+      <p>Розгорнутий план розробки AIPolygraph — від MVP до повноцінної платформи. (PDF або інтерактивний варіант).</p>
+    </section>
+
+    <section id="contact">
+      <h2>Контакти</h2>
+      <p>Зв'язок з командою розробки AIPolygraph:<br>
+         Email: <a href="mailto:your@email.com">your@email.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 AIPolygraph. Усі права захищено.
+  </footer>
+</body>
+</html>
