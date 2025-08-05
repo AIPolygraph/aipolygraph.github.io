@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Демо — AIPolygraph</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #eef2f5; }
+    header { background: #002b45; color: white; padding: 20px; text-align: center; }
+    main { max-width: 700px; margin: 30px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h1 { text-align: center; }
+    .question { font-weight: bold; margin-bottom: 15px; }
+    input[type="text"] { width: 100%; padding: 10px; margin-bottom: 15px; font-size: 16px; }
+    button { background: #015c87; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+    button:hover { background: #014566; }
+    .response { margin-top: 20px; font-style: italic; color: #444; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Демо-модуль AIPolygraph</h1>
+  <p>Симуляція діалогу з віртуальним поліграфом</p>
+</header>
+
+<main>
+  <div class="question" id="question">Завантаження запитання...</div>
+  <input type="text" id="answerInput" placeholder="Введіть відповідь тут..." autocomplete="off">
+  <button onclick="submitAnswer()">Відповісти</button>
+  <div class="response" id="response"></div>
+</main>
+
+<script>
+  const questions = [
+    "Чи маєте ви додаткові джерела доходу, які не декларуєте?",
+    "Чи отримували ви колись подарунки в обмін на вплив або рішення?",
+    "Чи працює хтось із ваших родичів у державному секторі?",
+    "Чи доводилося вам ухилятись від відповідальності на посаді?",
+    "Чи є у вас зв’язки з особами, підозрюваними у корупції?"
+  ];
+
+  let current = 0;
+  let history = [];
+
+  function loadQuestion() {
+    if (current < questions.length) {
+      document.getElementById('question').innerText = questions[current];
+      document.getElementById('answerInput').value = '';
+      document.getElementById('response').innerText = '';
+    } else {
+      conclude();
+    }
+  }
+
+  function submitAnswer() {
+    const input = document.getElementById('answerInput').value.trim();
+    if (!input) return;
+    history.push({ q: questions[current], a: input });
+    current++;
+    loadQuestion();
+  }
+
+  function conclude() {
+    let risk = 0;
+    for (let entry of history) {
+      const a = entry.a.toLowerCase();
+      if (a.includes("не скажу") || a.includes("не хочу") || a.includes("не пам’ятаю")) risk++;
+      if (a.includes("так")) risk++;
+    }
+    const level = risk >= 3 ? "⚠️ Високий рівень ризику приховування фактів." :
+                  risk == 2 ? "🔎 Можлива недоброчесність. Рекомендується додаткова перевірка." :
+                              "✅ Ознак ухилення або ризику не виявлено.";
+
+    document.getElementById('question').innerText = "Результат перевірки:";
+    document.getElementById('answerInput').style.display = 'none';
+    document.querySelector('button').style.display = 'none';
+    document.getElementById('response').innerText = level;
+  }
+
+  loadQuestion();
+</script>
+
+</body>
+</html>
