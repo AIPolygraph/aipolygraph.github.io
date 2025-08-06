@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIPolygraph — AI for Integrity Assessment</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <!-- Language switcher -->
+    <div id="language-switcher">
+      <a href="index.html">UA</a> | <a href="index-en.html" style="font-weight: bold;">EN</a>
+    </div>
+
+    <h1>AIPolygraph</h1>
+    <p>Innovative AI system for anti-corruption screening</p>
+    <!-- Banner -->
+    <img src="AIPolygraph.png" alt="AIPolygraph Banner" style="width:30%; max-width:1000px; margin-top:20px; border-radius:10px;" />
+
+    <nav>
+      <a href="index-en.html">Home</a>
+      <a href="demo.html">Demo</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>What is AIPolygraph?</h2>
+      <p>
+        An online platform that analyzes user responses using artificial intelligence to detect signs of evasion, deception, involvement in corrupt schemes, or unwillingness to answer direct questions.
+      </p>
+      <p>
+        This solution is designed for the public sector, HR departments, security services, and anyone seeking a reliable method for integrity assessment.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 AIPolygraph. All rights reserved.
+  </footer>
+
+  <!-- Feedback -->
+  <div id="feedback-button" onclick="openFeedbackMenu()">✉️ Feedback</div>
+
+  <div id="feedback-menu">
+    <a href="contact.html">📄 Contact</a>
+    <a href="mailto:your@email.com">📧 Email</a>
+    <a href="https://t.me/intuitportal" target="_blank">💬 Telegram</a>
+  </div>
+
+  <script>
+    function openFeedbackMenu() {
+      const menu = document.getElementById("feedback-menu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+
+    document.addEventListener("click", function(e) {
+      const menu = document.getElementById("feedback-menu");
+      const button = document.getElementById("feedback-button");
+      if (!menu.contains(e.target) && !button.contains(e.target)) {
+        menu.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
