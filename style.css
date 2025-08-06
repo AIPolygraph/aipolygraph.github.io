@@ -74,10 +74,20 @@ textarea {
   border: 1px solid #ccc;
   resize: vertical;
 }
-#outputPrompt {
-  background: #f9f9f9;
-  border: 1px dashed #aaa;
+button {
+  background: #1b365d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
 }
+button:hover {
+  background: #163055;
+}
+
+
 
 
 
