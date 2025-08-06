@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Демо — AIPolygraph</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
   <script>
-    function analyzeResponse() {
+    function generatePrompt() {
       const answer = document.getElementById("userAnswer").value.trim();
-      if (!answer) return alert("Введіть відповідь!");
+      if (!answer) {
+        alert("Введіть відповідь!");
+        return;
+      }
 
-      const prompt = `Проаналізуй цю відповідь у стилі поліграфа: "${answer}". Виявляй ухилення, маніпуляцію, небажання відповідати.`;
-      const encodedPrompt = encodeURIComponent(prompt);
-      const chatUrl = `https://chat.openai.com/chat?model=gpt-4&prompt=${encodedPrompt}`;
+      const prompt = `Проаналізуй цю відповідь у стилі поліграфа:\n"${answer}"\n\nОціни рівень правдивості, наявність ухилення, маніпуляцій, страху або приховування.`;
 
-      window.open(chatUrl, "_blank");
+      document.getElementById("outputPrompt").value = prompt;
+      document.getElementById("resultBox").style.display = "block";
+    }
+
+    function copyPrompt() {
+      const output = document.getElementById("outputPrompt");
+      output.select();
+      document.execCommand("copy");
+      alert("Промпт скопійовано! Вставте його в ChatGPT.");
     }
   </script>
 </head>
@@ -30,12 +39,17 @@
   </header>
   <main>
     <section>
-      <h2>Введіть відповідь для аналізу</h2>
-      <p>Спробуйте написати відповідь на умовне запитання поліграфа:</p>
+      <h2>Введіть відповідь на контрольне запитання</h2>
       <blockquote><em>«Чи мали ви особисту вигоду під час виконання службових обов’язків?»</em></blockquote>
-      
       <textarea id="userAnswer" rows="5" placeholder="Ваша відповідь..."></textarea><br><br>
-      <button onclick="analyzeResponse()">Аналізувати</button>
+      <button onclick="generatePrompt()">Згенерувати промпт</button>
+
+      <div id="resultBox" style="display:none; margin-top:20px;">
+        <h3>Скопіюйте цей запит і вставте в ChatGPT:</h3>
+        <textarea id="outputPrompt" rows="6" readonly></textarea><br>
+        <button onclick="copyPrompt()">Скопіювати</button>
+        <a href="https://chat.openai.com" target="_blank" style="margin-left:10px;">Перейти в ChatGPT</a>
+      </div>
     </section>
   </main>
   <footer>
