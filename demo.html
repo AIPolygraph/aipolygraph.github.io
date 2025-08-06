@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Демо — AIPolygraph</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
   <script>
-    function generatePrompt() {
+    function analyzeResponse() {
       const answer = document.getElementById("userAnswer").value.trim();
       if (!answer) {
         alert("Введіть відповідь!");
@@ -14,16 +14,23 @@
       }
 
       const prompt = `Проаналізуй цю відповідь у стилі поліграфа:\n"${answer}"\n\nОціни рівень правдивості, наявність ухилення, маніпуляцій, страху або приховування.`;
+      
+      // Копіюємо в буфер
+      copyTextToClipboard(prompt);
 
-      document.getElementById("outputPrompt").value = prompt;
-      document.getElementById("resultBox").style.display = "block";
+      // Відкриваємо ChatGPT
+      window.open("https://chat.openai.com", "_blank");
+
+      alert("Текст запиту скопійовано в буфер обміну. Вставте його в ChatGPT!");
     }
 
-    function copyPrompt() {
-      const output = document.getElementById("outputPrompt");
-      output.select();
+    function copyTextToClipboard(text) {
+      const temp = document.createElement("textarea");
+      temp.value = text;
+      document.body.appendChild(temp);
+      temp.select();
       document.execCommand("copy");
-      alert("Промпт скопійовано! Вставте його в ChatGPT.");
+      document.body.removeChild(temp);
     }
   </script>
 </head>
@@ -41,15 +48,10 @@
     <section>
       <h2>Введіть відповідь на контрольне запитання</h2>
       <blockquote><em>«Чи мали ви особисту вигоду під час виконання службових обов’язків?»</em></blockquote>
+      
       <textarea id="userAnswer" rows="5" placeholder="Ваша відповідь..."></textarea><br><br>
-      <button onclick="generatePrompt()">Згенерувати промпт</button>
-
-      <div id="resultBox" style="display:none; margin-top:20px;">
-        <h3>Скопіюйте цей запит і вставте в ChatGPT:</h3>
-        <textarea id="outputPrompt" rows="6" readonly></textarea><br>
-        <button onclick="copyPrompt()">Скопіювати</button>
-        <a href="https://chat.openai.com" target="_blank" style="margin-left:10px;">Перейти в ChatGPT</a>
-      </div>
+      <button onclick="analyzeResponse()">Аналізувати</button>
+      <p style="font-size: 0.9em; margin-top:10px;">Після натискання запит буде скопійовано, а ChatGPT відкриється в новій вкладці.</p>
     </section>
   </main>
   <footer>
