@@ -43,29 +43,45 @@
   <footer>
     &copy; 2025 AIPolygraph. Всі права захищені.
   </footer>
-    <!-- Зворотній зв'язок -->
-<div id="feedback-button" onclick="openFeedbackMenu()">✉️ Зворотній зв'язок</div>
+    <!-- Кнопка -->
+<div id="feedback-button" onclick="openModal()">✉️ Зворотній зв'язок</div>
 
-<div id="feedback-menu">
-  <a href="contact.html">📄 Форма</a>
-  <a href="mailto:your@email.com">📧 Email</a>
-  <a href="https://t.me/intuitportal" target="_blank">💬 Telegram</a>
+<!-- Модальне вікно -->
+<div id="feedback-modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">×</span>
+    <h2>Напишіть нам</h2>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <label>Ваше ім’я:<br>
+        <input type="text" name="name" required>
+      </label><br><br>
+      <label>Email:<br>
+        <input type="email" name="_replyto" required>
+      </label><br><br>
+      <label>Повідомлення:<br>
+        <textarea name="message" rows="5" required></textarea>
+      </label><br><br>
+      <button type="submit">Надіслати</button>
+    </form>
+  </div>
 </div>
 
 <script>
-  function openFeedbackMenu() {
-    const menu = document.getElementById("feedback-menu");
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  function openModal() {
+    document.getElementById("feedback-modal").style.display = "flex";
+  }
+  function closeModal() {
+    document.getElementById("feedback-modal").style.display = "none";
   }
 
-  // Закривати меню при кліку поза ним
-  document.addEventListener("click", function(e) {
-    const menu = document.getElementById("feedback-menu");
-    const button = document.getElementById("feedback-button");
-    if (!menu.contains(e.target) && !button.contains(e.target)) {
-      menu.style.display = "none";
+  // Закриття при кліку поза вікном
+  window.onclick = function(event) {
+    const modal = document.getElementById("feedback-modal");
+    if (event.target == modal) {
+      modal.style.display = "none";
     }
-  });
+  }
 </script>
+
 </body>
 </html>
