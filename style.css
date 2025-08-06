@@ -93,6 +93,54 @@ header {
   padding: 120px 20px 60px;
   text-align: center;
 }
+#feedback-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #1b365d;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+#feedback-button:hover {
+  background: #163055;
+}
+
+#feedback-menu {
+  display: none;
+  position: fixed;
+  bottom: 65px;
+  right: 20px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 999;
+  overflow: hidden;
+}
+
+#feedback-menu a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #1b365d;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+}
+
+#feedback-menu a:last-child {
+  border-bottom: none;
+}
+
+#feedback-menu a:hover {
+  background: #f0f0f0;
+}
+
 
 
 
