@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roadmap — AIPolygraph</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <!-- Language switcher -->
+    <div id="language-switcher" style="font-weight:bold;color: white;">
+      <a href="demo.html">UA</a> | <a href="demo-en.html" style="color: gold;">EN</a>
+    </div>
+
+    <h1>Roadmap</h1>
+    <!-- Banner -->
+    <img src="AIPolygraph.png" alt="AIPolygraph Banner" style="width:30%; max-width:1000px; margin-top:20px; border-radius:10px;" />
+
+    <nav>
+      <a href="index-en.html">Home</a>
+      <a href="demo-en.html">Demo</a>
+      <a href="roadmap-en.html">Roadmap</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Project Milestones</h2>
+      <ul>
+        <li>✅ MVP Demo</li>
+        <li>🚧 Website Structure</li>
+        <li>🧠 GPT Integration</li>
+        <li>📲 Mobile Optimization</li>
+        <li>🏛 Presentation for Government Agencies</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 AIPolygraph. All rights reserved.
+  </footer>
+
+  <!-- Feedback -->
+  <div id="feedback-button" onclick="openFeedbackMenu()">✉️ Feedback</div>
+
+  <div id="feedback-menu">
+    <a href="contact.html">📄 Contact</a>
+    <a href="mailto:your@email.com">📧 Email</a>
+    <a href="https://t.me/intuitportal" target="_blank">💬 Telegram</a>
+  </div>
+
+  <script>
+    function openFeedbackMenu() {
+      const menu = document.getElementById("feedback-menu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+
+    document.addEventListener("click", function(e) {
+      const menu = document.getElementById("feedback-menu");
+      const button = document.getElementById("feedback-button");
+      if (!menu.contains(e.target) && !button.contains(e.target)) {
+        menu.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
