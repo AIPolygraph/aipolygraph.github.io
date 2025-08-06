@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Демо — AIPolygraph</title>
   <link rel="stylesheet" href="style.css" />
+  <script>
+    function analyzeResponse() {
+      const answer = document.getElementById("userAnswer").value.trim();
+      if (!answer) return alert("Введіть відповідь!");
+
+      const prompt = `Проаналізуй цю відповідь у стилі поліграфа: "${answer}". Виявляй ухилення, маніпуляцію, небажання відповідати.`;
+      const encodedPrompt = encodeURIComponent(prompt);
+      const chatUrl = `https://chat.openai.com/chat?model=gpt-4&prompt=${encodedPrompt}`;
+
+      window.open(chatUrl, "_blank");
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -18,9 +30,12 @@
   </header>
   <main>
     <section>
-      <h2>Онлайн-тестування</h2>
-      <p>Цей модуль демонструє базову логіку адаптивного поліграфа. Відповідайте на запитання, і система сформує попередній висновок.</p>
-      <p><a href="#">(Тут буде інтерактивний модуль...)</a></p>
+      <h2>Введіть відповідь для аналізу</h2>
+      <p>Спробуйте написати відповідь на умовне запитання поліграфа:</p>
+      <blockquote><em>«Чи мали ви особисту вигоду під час виконання службових обов’язків?»</em></blockquote>
+      
+      <textarea id="userAnswer" rows="5" placeholder="Ваша відповідь..."></textarea><br><br>
+      <button onclick="analyzeResponse()">Аналізувати</button>
     </section>
   </main>
   <footer>
