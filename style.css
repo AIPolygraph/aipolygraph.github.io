@@ -86,13 +86,13 @@ button {
 button:hover {
   background: #163055;
 }
-header {
+/*header {
   background: url('AIPolygraph.png') no-repeat center center;
   background-size: cover;
   color: white;
   padding: 120px 20px 60px;
   text-align: center;
-}
+}*/
 #feedback-button {
   position: fixed;
   bottom: 20px;
@@ -140,6 +140,7 @@ header {
 #feedback-menu a:hover {
   background: #f0f0f0;
 }
+
 
 
 
