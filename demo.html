@@ -5,84 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Демо — AIPolygraph</title>
   <link rel="stylesheet" href="style.css" />
-  <script>
-    function analyzeResponse() {
-      const answer = document.getElementById("userAnswer").value.trim();
-      if (!answer) {
-        alert("Введіть відповідь!");
-        return;
-      }
-
-      const prompt = `Проаналізуй цю відповідь у стилі поліграфа:\n"${answer}"\n\nОціни рівень правдивості, наявність ухилення, маніпуляцій, страху або приховування.`;
-      
-      // Копіюємо в буфер
-      copyTextToClipboard(prompt);
-
-      // Відкриваємо ChatGPT
-      window.open("https://chat.openai.com", "_blank");
-
-      alert("Текст запиту скопійовано в буфер обміну. Вставте його в ChatGPT!");
-    }
-
-    function copyTextToClipboard(text) {
-      const temp = document.createElement("textarea");
-      temp.value = text;
-      document.body.appendChild(temp);
-      temp.select();
-      document.execCommand("copy");
-      document.body.removeChild(temp);
-    }
-  </script>
 </head>
 <body>
   <header>
-    <h1>Демо-модуль</h1>
-           <!-- Банер -->
- <img src="AIPolygraph.png" alt="AIPolygraph Banner" style="width:30%; max-width:1000px; margin-top:20px; border-radius:10px;" /> 
+    <h1>AIPolygraph</h1>
+    <p>Демо-режим перевірки доброчесності</p>
     <nav>
       <a href="index.html">Головна</a>
       <a href="demo.html">Демо</a>
       <a href="roadmap.html">Дорожня карта</a>
       <a href="contact.html">Контакти</a>
     </nav>
-
   </header>
+
   <main>
     <section>
-      <h2>Введіть відповідь на контрольне запитання</h2>
-      <blockquote><em>«Чи мали ви особисту вигоду під час виконання службових обов’язків?»</em></blockquote>
-      
-      <textarea id="userAnswer" rows="5" placeholder="Ваша відповідь..."></textarea><br><br>
-      <button onclick="analyzeResponse()">Аналізувати</button>
-      <p style="font-size: 0.9em; margin-top:10px;">Після натискання запит буде скопійовано, а ChatGPT відкриється в новій вкладці.</p>
+      <h2>Введіть відповідь на запитання:</h2>
+      <p><em>Наприклад: Чи мали ви раніше справу з державними тендерами?</em></p>
+      <textarea id="userAnswer" placeholder="Ваша відповідь..." rows="6" style="width:100%; max-width:600px;"></textarea>
+      <br><br>
+      <button onclick="analyzeWithGPT()">Аналізувати в ChatGPT</button>
     </section>
   </main>
+
   <footer>
     &copy; 2025 AIPolygraph. Всі права захищені.
   </footer>
-    <!-- Зворотній зв'язок -->
-<div id="feedback-button" onclick="openFeedbackMenu()">✉️ Зворотній зв'язок</div>
 
-<div id="feedback-menu">
-  <a href="contact.html">📄 Контакти</a>
-  <a href="mailto:your@email.com">📧 Email</a>
-  <a href="https://t.me/intuitportal" target="_blank">💬 Telegram</a>
-</div>
+  <script>
+    function analyzeWithGPT() {
+      const answer = document.getElementById("userAnswer").value.trim();
+      if (!answer) {
+        alert("Будь ласка, введіть відповідь для аналізу.");
+        return;
+      }
 
-<script>
-  function openFeedbackMenu() {
-    const menu = document.getElementById("feedback-menu");
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
-  }
+      const prompt = `
+      Ви — ШІ-поліграф. Проаналізуйте відповідь користувача з точки зору ймовірності ухилення від правди, уникнення прямої відповіді, або можливої брехні.
 
-  // Закривати меню при кліку поза ним
-  document.addEventListener("click", function(e) {
-    const menu = document.getElementById("feedback-menu");
-    const button = document.getElementById("feedback-button");
-    if (!menu.contains(e.target) && !button.contains(e.target)) {
-      menu.style.display = "none";
+      Відповідь користувача:
+      "${answer}"
+
+      Висновок:`;
+
+      const encodedPrompt = encodeURIComponent(prompt);
+      const gptUrl = `https://chat.openai.com/?model=gpt-4&prompt=${encodedPrompt}`;
+      window.open(gptUrl, '_blank');
     }
-  });
-</script>
+  </script>
 </body>
 </html>
