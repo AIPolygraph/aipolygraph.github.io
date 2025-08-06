@@ -31,5 +31,29 @@
   <footer>
     &copy; 2025 AIPolygraph. Всі права захищені.
   </footer>
+    <!-- Зворотній зв'язок -->
+<div id="feedback-button" onclick="openFeedbackMenu()">✉️ Зворотній зв'язок</div>
+
+<div id="feedback-menu">
+  <a href="contact.html">📄 Форма</a>
+  <a href="mailto:your@email.com">📧 Email</a>
+  <a href="https://t.me/intuitportal" target="_blank">💬 Telegram</a>
+</div>
+
+<script>
+  function openFeedbackMenu() {
+    const menu = document.getElementById("feedback-menu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+
+  // Закривати меню при кліку поза ним
+  document.addEventListener("click", function(e) {
+    const menu = document.getElementById("feedback-menu");
+    const button = document.getElementById("feedback-button");
+    if (!menu.contains(e.target) && !button.contains(e.target)) {
+      menu.style.display = "none";
+    }
+  });
+</script>
 </body>
 </html>
