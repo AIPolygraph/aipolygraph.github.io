@@ -128,7 +128,7 @@ button:hover {
   display: block;
   padding: 10px 15px;
   text-decoration: none;
-  color: #1b365d;
+  color: white;/*#1b365d*/
   font-weight: bold;
   border-bottom: 1px solid #eee;
 }
@@ -220,6 +220,7 @@ button:hover {
 .close-btn:hover {
   color: #000;
 }
+
 
 
 
