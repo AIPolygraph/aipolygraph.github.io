@@ -265,18 +265,19 @@ button:hover {
 .hero-wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  justify-content: flex-start; /* не по центру */
+  max-width: 100%;
+  margin: 0;
   gap: 30px;
-  flex-wrap: wrap;
+  padding-left: 40px; /* ~10 мм */
 }
 
 .hero-banner img {
-  width: 300px;      /* Фіксована ширина */
+  width: 300px;
   height: auto;
   border-radius: 10px;
   display: block;
+  margin-left: 0; /* прибрати будь-які відступи */
 }
 
 .hero-overlay {
@@ -289,6 +290,7 @@ button:hover {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 
 
 
