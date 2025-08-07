@@ -8,6 +8,13 @@
 </head>
 <div id="lang-switch"></div>
 <div id="header"></div>
+  <script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+</script>
   <main>
     <section>
       <h2>Що таке AIPolygraph?</h2>
