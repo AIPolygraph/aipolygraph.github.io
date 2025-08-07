@@ -33,6 +33,12 @@ function setupLangSwitcher() {
     if (uaLink) uaLink.classList.add("active");
   }
 }
+//
+window.addEventListener("load", () => {
+  ["lang-switch", "header", "footer"].forEach(id => {
+    loadComponent(id, `${id}.html`);
+  });
+});
 
 
 document.addEventListener("DOMContentLoaded", () => {
