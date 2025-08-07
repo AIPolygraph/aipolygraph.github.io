@@ -7,11 +7,24 @@ function loadComponent(id, url) {
       const container = document.getElementById(id);
       if (container) {
         container.innerHTML = data;
-        if (id === "lang-switch") setupLangSwitcher(); // виклик лише після вставки
+
+        // Після вставки lang-switch
+        if (id === "lang-switch") {
+          setupLangSwitcher();
+        }
+
+        // Після вставки header
+        if (id === "header") {
+          setTimeout(() => {
+            const overlay = document.querySelector(".hero-overlay");
+            if (overlay) overlay.classList.add("ready");
+          }, 50);
+        }
       }
     })
     .catch(err => console.error(`Помилка завантаження ${url}:`, err));
 }
+
 
 function setupLangSwitcher() {
   const current = window.location.pathname.split("/").pop(); // напр. demo-en.html
