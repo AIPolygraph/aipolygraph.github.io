@@ -13,13 +13,13 @@ header {
 nav {
   margin-top: 15px;
 }
-nav a {
+language-switcher а, nav a {
   color: white;
   margin: 0 10px;
   text-decoration: none;
   font-weight: bold;
 }
-nav a:hover {
+language-switcher а, nav a:hover {
   text-decoration: underline;
 }
 main {
@@ -284,6 +284,7 @@ button:hover {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 
 
 
