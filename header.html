@@ -1,19 +1,14 @@
 <header class="hero">
   <!-- Перемикач мов -->
-<div id="lang-switch"></div>
-<script>
-  fetch("lang-switch.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("lang-switch").innerHTML = data;
-    });
-</script>
+  <div id="lang-switch"></div>
+
   <div class="hero-wrapper">
     <!-- Блок з банером -->
     <div class="hero-banner">
       <img src="AIPolygraph.png" alt="AIPolygraph Banner" />
     </div>
-    <!-- Текст по центру -->
+
+    <!-- Центрований текст -->
     <div class="hero-overlay">
       <h2>Інноваційна AI-система для антикорупційної перевірки</h2>
       <nav>
@@ -26,4 +21,17 @@
       </nav>
     </div>
   </div>
+
+  <script>
+    // Завантаження перемикача мов
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.getElementById("lang-switch");
+      if (container) {
+        fetch("lang-switch.html")
+          .then(res => res.text())
+          .then(data => container.innerHTML = data)
+          .catch(err => console.error("Помилка завантаження lang-switch:", err));
+      }
+    });
+  </script>
 </header>
