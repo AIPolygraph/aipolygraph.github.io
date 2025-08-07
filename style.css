@@ -269,40 +269,27 @@ button:hover {
   max-width: 1200px;
   margin: 0 auto;
   gap: 30px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .hero-banner img {
-  width: 300px;
+  width: 300px;      /* Фіксована ширина */
   height: auto;
   border-radius: 10px;
+  display: block;
 }
 
 .hero-overlay {
-  text-align: center;
   flex: 1;
   max-width: 600px;
-  margin: 0 auto;
-}
-
-.hero-overlay nav {
-  margin-top: 20px;
-}
-
-.hero-overlay nav a {
-  color: white;
-  margin: 0 10px;
-  text-decoration: none;
-}
-
-.hero-overlay nav a:hover {
-  text-decoration: underline;
+  text-align: center;
 }
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 
 
 
