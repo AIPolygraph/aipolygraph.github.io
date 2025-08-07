@@ -1,4 +1,13 @@
 <header class="hero">
+  <!-- Перемикач мов -->
+<div id="lang-switch"></div>
+<script>
+  fetch("lang-switch.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("lang-switch").innerHTML = data;
+    });
+</script>
   <div class="hero-wrapper">
     <!-- Блок з банером -->
     <div class="hero-banner">
