@@ -24,9 +24,16 @@ function setupLangSwitcher() {
   const uaLink = document.getElementById("lang-ua");
   const enLink = document.getElementById("lang-en");
 
-  if (uaLink) {uaLink.href = uaVersion; uaLink.classList.add("active");}
-  if (enLink) {enLink.href = enVersion; enLink.classList.add("active");}
+  if (uaLink) uaLink.href = uaVersion;
+  if (enLink) enLink.href = enVersion;
+
+  if (isEnglish) {
+    if (enLink) enLink.classList.add("active");
+  } else {
+    if (uaLink) uaLink.classList.add("active");
+  }
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
   loadComponent("lang-switch", "lang-switch.html");
