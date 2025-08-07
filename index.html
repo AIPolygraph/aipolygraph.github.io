@@ -6,28 +6,8 @@
   <title>AIPolygraph — AI для перевірки доброчесності</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-<header class="hero">
-  <div class="hero-wrapper">
-    <!-- Блок з банером -->
-    <div class="hero-banner">
-      <img src="AIPolygraph.png" alt="AIPolygraph Banner" />
-    </div>
-
-    <!-- Текст по центру -->
-    <div class="hero-overlay">
-      <h2>Інноваційна AI-система для антикорупційної перевірки</h2>
-      <nav>
-        <a href="index.html">Головна</a>
-        <a href="demo.html">Демо</a>
-        <a href="roadmap.html">Дорожня карта</a>
-        <a href="contact.html">Контакти</a>
-        <a href="how-it-works.html">Як це працює</a>
-        <a href="faq.html"><strong>FAQ</strong></a>
-      </nav>
-    </div>
-  </div>
-</header>
+<div id="lang-switch"></div>
+<div id="header"></div>
 
   <main>
     <section>
@@ -42,32 +22,7 @@
     </section>
   </main>
 
-  <!-- Зворотній зв'язок -->
-<div id="feedback-button" onclick="openFeedbackMenu()">✉️ Зворотній зв'язок</div>
-
-<div id="feedback-menu">
-  <a href="contact.html">📄 Контакти</a>
-  <a href="mailto:your@email.com">📧 Email</a>
-  <a href="https://t.me/intuitportal" target="_blank">💬 Telegram</a>
-</div>
-
-<script>
-  function openFeedbackMenu() {
-    const menu = document.getElementById("feedback-menu");
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
-  }
-
-  // Закривати меню при кліку поза ним
-  document.addEventListener("click", function(e) {
-    const menu = document.getElementById("feedback-menu");
-    const button = document.getElementById("feedback-button");
-    if (!menu.contains(e.target) && !button.contains(e.target)) {
-      menu.style.display = "none";
-    }
-  });
-</script>
-<footer>
-    &copy; 2025 AIPolygraph. Всі права захищені.
-  </footer>
+<div id="footer"></div>
+<script src="layout.js"></script>
 </body>
 </html>
