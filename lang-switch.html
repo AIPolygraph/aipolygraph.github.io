@@ -2,7 +2,14 @@
   <a href="#" id="lang-ua">UA</a> | 
   <a href="#" id="lang-en">EN</a>
 </div>
-
+<script>
+  // Виділення активної мови
+  if (isEnglish) {
+    document.getElementById("lang-en").classList.add("active");
+  } else {
+    document.getElementById("lang-ua").classList.add("active");
+  }
+</script>
 <style>
   #language-switcher {
     position: fixed;
