@@ -266,38 +266,45 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap; /* для мобільної адаптації */
-  gap: 20px;
+  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
+  flex-wrap: wrap; /* мобільна адаптація */
 }
 
 .hero-banner {
-  width: 200px;
-  max-width: 100%;
+  width: 160px;
+  height: auto;
   border-radius: 10px;
+  flex-shrink: 0;
 }
 
 .hero-overlay {
   flex: 1;
-  text-align: center;
   min-width: 280px;
+  text-align: center;
 }
 
-.hero-overlay nav {
-  margin-top: 20px;
+.hero-overlay h2 {
+  margin-bottom: 15px;
 }
 
-.hero-overlay a {
-  color: #fff;
-  margin: 0 10px;
+.hero-overlay nav a {
+  color: white;
   text-decoration: none;
+  margin: 0 10px;
 }
+
+.hero-overlay nav a:hover {
+  text-decoration: underline;
+}
+
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 
 
 
