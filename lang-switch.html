@@ -1,5 +1,41 @@
-<!-- lang-switch.html -->
-<div id="language-switcher" style="position: fixed; top: 10px; right: 10px; font-weight: bold;">
-  <a href="index.html" style="color: white;">UA</a> | 
-  <a href="index-en.html" style="color: white;">EN</a>
+<div id="language-switcher">
+  <a href="#" id="lang-ua">UA</a> | 
+  <a href="#" id="lang-en">EN</a>
 </div>
+<script>
+  const currentPage = window.location.pathname.split("/").pop(); // Наприклад: faq-en.html
+  const isEnglish = currentPage.includes("-en");
+  const baseName = isEnglish ? currentPage.replace("-en", "") : currentPage.replace(".html", "");
+
+  // Встановлення посилань
+  document.getElementById("lang-ua").href = baseName + ".html";
+  document.getElementById("lang-en").href = baseName + "-en.html";
+
+  // Виділення активної мови
+  if (isEnglish) {
+    document.getElementById("lang-en").classList.add("active");
+  } else {
+    document.getElementById("lang-ua").classList.add("active");
+  }
+</script>
+
+<style>
+  #language-switcher {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+    z-index: 1000;
+  }
+
+  #language-switcher a {
+    color: white;
+    text-decoration: none;
+    padding: 0 5px;
+  }
+
+  #language-switcher a.active {
+    text-decoration: underline;
+    color: #00ffc3;
+  }
+</style>
