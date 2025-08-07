@@ -273,7 +273,7 @@ button:hover {
 }
 
 .hero-banner {
-  width: 160px;
+  width: 300px;
   height: auto;
   border-radius: 10px;
   flex-shrink: 0;
@@ -304,6 +304,7 @@ button:hover {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 
 
 
