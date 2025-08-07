@@ -1,19 +1,4 @@
-<!-- lang-switch.html -->
 <div id="language-switcher" style="position: fixed; top: 10px; right: 10px; font-weight: bold; color: white;">
   <a href="#" id="lang-ua" style="color: white;">UA</a> | 
   <a href="#" id="lang-en" style="color: white;">EN</a>
 </div>
-
-<script>
-  const current = window.location.pathname.split("/").pop(); // приклад: faq-en.html
-  const isEnglish = current.includes("-en");
-
-  // Генеруємо посилання на пару
-  const uaVersion = current.replace("-en", "");
-  const enVersion = current.includes(".html") 
-      ? current.replace(".html", "-en.html") 
-      : current + "-en.html";
-
-  document.getElementById("lang-ua").href = uaVersion;
-  document.getElementById("lang-en").href = enVersion;
-</script>
