@@ -36,4 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Затримка, щоб дочекатися вставки header
   setTimeout(highlightActiveMenu, 100); // 100 мс
 });
+// Бургер-кнопка
+function toggleMenu() {
+  const menu = document.getElementById("main-nav");
+  menu.classList.toggle("show");
+}
 </script>
