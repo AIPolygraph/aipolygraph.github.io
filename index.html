@@ -7,7 +7,15 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<div id="header"></div>
+<div id="header">
+
+  <!-- lang-switch.html -->
+<div id="language-switcher" style="position: fixed; top: 10px; right: 10px; font-weight: bold;">
+  <a href="index.html" style="color: white;">UA</a> | 
+  <a href="index-en.html" style="color: white;">EN</a>
+</div>
+  
+</div>
   <script>
   fetch("header.html")
     .then(res => res.text())
