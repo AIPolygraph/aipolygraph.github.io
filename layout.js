@@ -24,8 +24,8 @@ function setupLangSwitcher() {
   const uaLink = document.getElementById("lang-ua");
   const enLink = document.getElementById("lang-en");
 
-  if (uaLink) {uaLink.href = uaVersion; document.getElementById("lang-en").classList.add("active");}
-  if (enLink) {enLink.href = enVersion; document.getElementById("lang-ua").classList.add("active");}
+  if (uaLink) {uaLink.href = uaVersion; uaLink.classList.add("active");}
+  if (enLink) {enLink.href = enVersion; enLink.classList.add("active");}
 }
 
 document.addEventListener("DOMContentLoaded", () => {
