@@ -29,7 +29,7 @@ function highlightActiveMenu() {
 
 // Головне завантаження після DOM
 document.addEventListener("DOMContentLoaded", () => {
-  loadComponent("lang-switch", "lang-switch.html");
+ // loadComponent("lang-switch", "lang-switch.html");
   loadComponent("header", "header.html");
   loadComponent("footer", "footer.html");
 
