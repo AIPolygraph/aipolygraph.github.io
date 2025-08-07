@@ -254,6 +254,18 @@ footer {
   margin-top: 60px;
 }
 
+/* === animation === */
+.hero-overlay {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.8s ease;
+}
+
+.hero-overlay.ready {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* === ANIMATION === */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
@@ -280,3 +292,4 @@ footer {
     display: flex;
   }
 }
+
