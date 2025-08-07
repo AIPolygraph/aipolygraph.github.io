@@ -265,11 +265,11 @@ button:hover {
 .hero-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; /* центр всього блоку */
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
-  flex-wrap: wrap; /* мобільна адаптація */
+  flex-wrap: wrap;
 }
 
 .hero-banner {
@@ -281,8 +281,9 @@ button:hover {
 
 .hero-overlay {
   flex: 1;
-  min-width: 280px;
   text-align: center;
+  max-width: 600px; /* обмеження ширини для вирівнювання */
+  margin: 0 auto; /* вирівнювання в центрі */
 }
 
 .hero-overlay h2 {
@@ -300,10 +301,12 @@ button:hover {
 }
 
 
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 
 
 
