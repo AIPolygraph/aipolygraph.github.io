@@ -361,6 +361,11 @@ button:hover {
   .burger {
     display: block;
   }
+nav a.active {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #007acc;
+}
 
   .main-nav {
     display: none;
@@ -373,6 +378,7 @@ button:hover {
     display: flex;
   }
 }
+
 
 
 
