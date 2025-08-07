@@ -1,7 +1,5 @@
-<script>
 // layout.js
 
-// Завантажити компонент в контейнер з вказаним ID
 function loadComponent(id, url) {
   fetch(url)
     .then(res => res.text())
@@ -9,31 +7,29 @@ function loadComponent(id, url) {
       const container = document.getElementById(id);
       if (container) {
         container.innerHTML = data;
+        if (id === "lang-switch") setupLangSwitcher(); // виклик лише після вставки
       }
-    })
-    .catch(err => console.error(`Помилка завантаження ${url}:`, err));
+    });
 }
 
-// Підсвітити активний пункт меню
-function highlightActiveMenu() {
-  const currentPage = window.location.pathname.split("/").pop();
-  const navLinks = document.querySelectorAll("nav a");
+function setupLangSwitcher() {
+  const current = window.location.pathname.split("/").pop(); // напр. demo-en.html
+  const isEnglish = current.includes("-en");
 
-  navLinks.forEach(link => {
-    const linkPage = link.getAttribute("href");
-    if (linkPage === currentPage) {
-      link.classList.add("active");
-    }
-  });
+  const uaVersion = current.replace("-en", "");
+  const enVersion = current.includes(".html")
+    ? current.replace(".html", "-en.html")
+    : current + "-en.html";
+
+  const uaLink = document.getElementById("lang-ua");
+  const enLink = document.getElementById("lang-en");
+
+  if (uaLink) uaLink.href = uaVersion;
+  if (enLink) enLink.href = enVersion;
 }
 
-// Головне завантаження після DOM
 document.addEventListener("DOMContentLoaded", () => {
- // loadComponent("lang-switch", "lang-switch.html");
+  loadComponent("lang-switch", "lang-switch.html");
   loadComponent("header", "header.html");
   loadComponent("footer", "footer.html");
-
-  // Затримка, щоб дочекатися вставки header
-  setTimeout(highlightActiveMenu, 100); // 100 мс
 });
-</script>
