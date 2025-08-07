@@ -302,11 +302,79 @@ button:hover {
   text-decoration: underline;
 }
 
+/* Заголовок */
+.site-header {
+  background-color: #111;
+  color: white;
+  padding: 10px 20px;
+}
 
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Назва / Лого */
+.logo a {
+  font-size: 1.6rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Бургер-кнопка */
+.burger {
+  font-size: 1.5rem;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: none; /* приховуємо на великих екранах */
+}
+
+/* Меню */
+.main-nav {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.main-nav a.active {
+  text-decoration: underline;
+  color: #00bfff;
+}
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Адаптивність */
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .main-nav.show {
+    display: flex;
+  }
+}
+
+
 
 
 
