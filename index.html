@@ -6,6 +6,19 @@
   <title>AIPolygraph — AI для перевірки доброчесності</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+  <div id="lang-switch"></div>
+  <script>
+    // Завантаження перемикача мов
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.getElementById("lang-switch");
+      if (container) {
+        fetch("lang-switch.html")
+          .then(res => res.text())
+          .then(data => container.innerHTML = data)
+          .catch(err => console.error("Помилка завантаження lang-switch:", err));
+      }
+    });
+  </script>
   <!-- lang-switch.html 
 <div id="language-switcher" style="position: fixed;background: #002b45; top: 10px; right: 10px;">
   <a href="index.html" style="color: white; font-weight: bold;">UA</a> | 
