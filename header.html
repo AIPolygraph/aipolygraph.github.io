@@ -1,7 +1,4 @@
 <header class="hero">
-  <!-- Перемикач мов -->
-  <div id="lang-switch"></div>
-
   <div class="hero-wrapper">
     <!-- Блок з банером -->
     <div class="hero-banner">
@@ -20,18 +17,5 @@
         <a href="contact.html">Контакти</a>
       </nav>
     </div>
-  </div>
 
-  <script>
-    // Завантаження перемикача мов
-    document.addEventListener("DOMContentLoaded", () => {
-      const container = document.getElementById("lang-switch");
-      if (container) {
-        fetch("lang-switch.html")
-          .then(res => res.text())
-          .then(data => container.innerHTML = data)
-          .catch(err => console.error("Помилка завантаження lang-switch:", err));
-      }
-    });
-  </script>
 </header>
