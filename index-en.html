@@ -7,26 +7,9 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-
-    <h1>AIPolygraph</h1>
-    <p>Innovative AI system for anti-corruption screening</p>
-    <!-- Banner -->
-    <img src="AIPolygraph.png" alt="AIPolygraph Banner" style="width:30%; max-width:1000px; margin-top:20px; border-radius:10px;" />
-
-    <nav>
-      <a href="index-en.html">Home</a>
-      <a href="demo-en.html">Demo</a>
-      <a href="roadmap-en.html">Roadmap</a>
-      <a href="contact-en.html">Contact</a>
-      <a href="how-it-works-en.html">How it works</a>
-      <a href="faq-en.html" style="font-weight: bold;">FAQ</a>
-    </nav>
-  </header>
-    <!-- Language switcher -->
-    <div id="language-switcher">
-      <a href="index.html">UA</a> | <a href="index-en.html" style="font-weight:bold;">EN</a>
-    </div>
+  <!-- Components -->
+  <div id="lang-switch"></div>
+  <div id="header"></div>
   <main>
     <section>
       <h2>What is AIPolygraph?</h2>
@@ -39,33 +22,9 @@
     </section>
   </main>
 
+  <div id="footer"></div>
 
-
-  <!-- Feedback -->
-  <div id="feedback-button" onclick="openFeedbackMenu()">✉️ Feedback</div>
-
-  <div id="feedback-menu">
-    <a href="contact.html">📄 Contact</a>
-    <a href="mailto:your@email.com">📧 Email</a>
-    <a href="https://t.me/intuitportal" target="_blank">💬 Telegram</a>
-  </div>
-
-  <script>
-    function openFeedbackMenu() {
-      const menu = document.getElementById("feedback-menu");
-      menu.style.display = menu.style.display === "block" ? "none" : "block";
-    }
-
-    document.addEventListener("click", function(e) {
-      const menu = document.getElementById("feedback-menu");
-      const button = document.getElementById("feedback-button");
-      if (!menu.contains(e.target) && !button.contains(e.target)) {
-        menu.style.display = "none";
-      }
-    });
-  </script>
-  <br />  <footer>
-    &copy; 2025 AIPolygraph. All rights reserved.
-  </footer>
+  <!-- Script loading -->
+  <script src="layout.js"></script>
 </body>
 </html>
