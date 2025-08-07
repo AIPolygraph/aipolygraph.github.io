@@ -28,8 +28,6 @@ function setupLangSwitcher() {
   if (enLink) enLink.href = enVersion;
 }
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
   loadComponent("lang-switch", "lang-switch.html");
   loadComponent("header", "header.html");
