@@ -28,6 +28,13 @@ function setupLangSwitcher() {
   if (enLink) enLink.href = enVersion;
 }
 
+// Виділення активної мови
+  if (isEnglish) {
+    document.getElementById("lang-en").classList.add("active");
+  } else {
+    document.getElementById("lang-ua").classList.add("active");
+  }
+
 document.addEventListener("DOMContentLoaded", () => {
   loadComponent("lang-switch", "lang-switch.html");
   loadComponent("header", "header.html");
