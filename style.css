@@ -259,17 +259,18 @@ button:hover {
 .hero {
   background-color: #222;
   color: white;
-  padding: 40px 20px;
+  padding: 40px 0;
 }
 
 .hero-wrapper {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* не по центру */
-  max-width: 100%;
-  margin: 0;
-  gap: 30px;
-  padding-left: 40px; /* ~10 мм */
+  justify-content: flex-start;
+  position: relative;
+}
+
+.hero-banner {
+  margin-left: 40px; /* ~10 мм */
 }
 
 .hero-banner img {
@@ -277,19 +278,36 @@ button:hover {
   height: auto;
   border-radius: 10px;
   display: block;
-  margin-left: 0; /* прибрати будь-які відступи */
 }
 
 .hero-overlay {
-  flex: 1;
-  max-width: 600px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
+  max-width: 600px;
 }
+
+.hero-overlay nav {
+  margin-top: 20px;
+}
+
+.hero-overlay nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.hero-overlay nav a:hover {
+  text-decoration: underline;
+}
+
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 
 
 
