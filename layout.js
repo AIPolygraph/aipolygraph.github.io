@@ -9,7 +9,8 @@ function loadComponent(id, url) {
         container.innerHTML = data;
         if (id === "lang-switch") setupLangSwitcher(); // виклик лише після вставки
       }
-    });
+    })
+    .catch(err => console.error(`Помилка завантаження ${url}:`, err));
 }
 
 function setupLangSwitcher() {
@@ -33,16 +34,12 @@ function setupLangSwitcher() {
     if (uaLink) uaLink.classList.add("active");
   }
 }
-//
-window.addEventListener("load", () => {
-  ["lang-switch", "header", "footer"].forEach(id => {
-    loadComponent(id, `${id}.html`);
-  });
-});
-
 
 document.addEventListener("DOMContentLoaded", () => {
+  const isEnglish = window.location.pathname.includes("-en");
+  const headerFile = isEnglish ? "header-en.html" : "header.html";
+
   loadComponent("lang-switch", "lang-switch.html");
-  loadComponent("header", "header.html");
+  loadComponent("header", headerFile);
   loadComponent("footer", "footer.html");
 });
