@@ -262,50 +262,48 @@ button:hover {
   padding: 40px 20px;
 }
 
-.hero-container {
+.hero-wrapper {
   display: flex;
   align-items: center;
-  justify-content: center; /* центр всього блоку */
-  gap: 30px;
+  justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
-  flex-wrap: wrap;
+  gap: 30px;
+  flex-wrap: nowrap;
 }
 
-.hero-banner {
+.hero-banner img {
   width: 300px;
   height: auto;
   border-radius: 10px;
-  flex-shrink: 0;
 }
 
 .hero-overlay {
-  flex: 1;
   text-align: center;
-  max-width: 600px; /* обмеження ширини для вирівнювання */
-  margin: 0 auto; /* вирівнювання в центрі */
+  flex: 1;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.hero-overlay h2 {
-  margin-bottom: 15px;
+.hero-overlay nav {
+  margin-top: 20px;
 }
 
 .hero-overlay nav a {
   color: white;
-  text-decoration: none;
   margin: 0 10px;
+  text-decoration: none;
 }
 
 .hero-overlay nav a:hover {
   text-decoration: underline;
 }
 
-
-
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 
 
 
