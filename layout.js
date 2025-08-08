@@ -75,7 +75,7 @@ function setupFeedbackMenu() {
 }
 // Додає клас активного пункту меню для поточної сторінки
 document.addEventListener("DOMContentLoaded", function () {
-    const currentPath = window.location.pathname.split("/").pop() || "index-en.html";
+    const currentPath = window.location.pathname.split("/").pop() || "index-en.html";  alert(currentPath);
     const navLinks = document.querySelectorAll(".hero nav a");
 
     navLinks.forEach(link => {
