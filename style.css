@@ -161,7 +161,7 @@ nav a:hover, .main-nav a:hover {
   padding: 10px 15px;
   text-decoration: none;
   color: #1b365d;
-  /*font-weight: bold;*/
+  font-weight: bold;
   border-bottom: 1px solid #eee;
 }
 #feedback-menu a:last-child {
@@ -169,9 +169,6 @@ nav a:hover, .main-nav a:hover {
 }
 #feedback-menu a:hover { 
   background: #f0f0f0;
-}
-#feedback-menu a:active {
-font-weight: bold;
 }
 
 /* === MODAL FORM === */
@@ -292,6 +289,7 @@ footer {
     display: flex;
   }
 }
+
 
 
 
