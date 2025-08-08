@@ -115,7 +115,7 @@ nav a:hover, .main-nav a:hover {
   }
 
   /* Ось це потрібно для підсвічування поточної мови */
-  .hero nav a:active {
+  .hero nav a.active {
     text-decoration: underline;
     font-weight: bold;
   }
@@ -302,6 +302,7 @@ footer {
     display: flex;
   }
 }
+
 
 
 
