@@ -48,6 +48,26 @@ function setupLangSwitcher() {
   }
 }
 
+//feedback
+  function openFeedbackMenu() {
+    const menu = document.getElementById("feedback-menu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+
+  document.getElementById("feedback-button").addEventListener("click", function (e) {
+    e.stopPropagation();
+    openFeedbackMenu();
+  });
+
+  document.addEventListener("click", function (e) {
+    const menu = document.getElementById("feedback-menu");
+    const button = document.getElementById("feedback-button");
+    if (!menu.contains(e.target) && !button.contains(e.target)) {
+      menu.style.display = "none";
+    }
+  });
+
+//
 document.addEventListener("DOMContentLoaded", () => {
   const isEnglish = window.location.pathname.includes("-en");
   const headerFile = isEnglish ? "header-en.html" : "header.html";
