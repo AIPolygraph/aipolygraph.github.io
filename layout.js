@@ -75,17 +75,17 @@ function setupFeedbackMenu() {
 }
 // Додає клас активного пункту меню для поточної сторінки
 document.addEventListener("DOMContentLoaded", function () {
-    const currentPath = window.location.pathname; // поточний шлях, наприклад "/about.html"
-    const navLinks = document.querySelectorAll(".hero nav a");
+    const currentPath = window.location.pathname.split("/").pop() || "index-en.html";
+    const navLinks = document.querySelectorAll(".hero-overlay nav a");
 
     navLinks.forEach(link => {
-        // Порівнюємо href без параметрів та хешів
-        const linkPath = new URL(link.href).pathname;
-        if (linkPath === currentPath) {
-            link.classList.add("active"); // додаємо клас
+        const linkFile = link.getAttribute("href");
+        if (linkFile === currentPath) {
+            link.classList.add("active");
         }
     });
 });
+
 //
 document.addEventListener("DOMContentLoaded", () => {
   const isEnglish = window.location.pathname.includes("-en");
