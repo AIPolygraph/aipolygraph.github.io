@@ -74,6 +74,17 @@ function setupFeedbackMenu() {
   });
 }
 // Додає клас активного пункту меню для поточної сторінки
+document.addEventListener("DOMContentLoaded", function () {
+    const currentPath = window.location.pathname.split("/").pop() || "index-en.html";
+    const navLinks = document.querySelectorAll(".hero nav a");
+
+    navLinks.forEach(link => {
+        const linkFile = link.getAttribute("href");
+        if (linkFile === currentPath) {
+            link.classList.add("active");
+        }
+    });
+});
 
 //
 document.addEventListener("DOMContentLoaded", () => {
