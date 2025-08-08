@@ -104,12 +104,21 @@ nav a:hover, .main-nav a:hover {
   text-decoration: none;
   font-weight: 500;
 }
-.hero nav a: hover {
-  color: #00ffc3;
-}
-.hero nav a:active {
-font-weight: bold;
-}
+  .hero nav a:hover {
+    color: #00ffc3;
+  }
+
+  /* Псевдоклас — тимчасовий, коли тримаєш клік */
+  .hero nav a:active {
+    text-decoration: underline;    
+    font-weight: bold;
+  }
+
+  /* Ось це потрібно для підсвічування поточної мови */
+  .hero nav a:active {
+    text-decoration: underline;
+    font-weight: bold;
+  }
 
 /* === Анімація появи hero-overlay === */
 .hero-overlay {
@@ -293,6 +302,7 @@ footer {
     display: flex;
   }
 }
+
 
 
 
