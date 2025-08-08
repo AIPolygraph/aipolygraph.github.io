@@ -7,25 +7,11 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-
-        <h1>AIPolygraph</h1>
-    <p>Demo mode: Integrity assessment using AI</p>
-
-    <nav>
-      <a href="index-en.html">Home</a>
-      <a href="demo-en.html">Demo</a>
-      <a href="roadmap-en.html">Roadmap</a>
-      <a href="contact-en.html">Contact</a>
-      <a href="how-it-works-en.html">How it works</a>
-      <a href="faq-en.html" style="font-weight: bold;">FAQ</a>
-    </nav>
-  </header>
-    <!-- Language switcher -->
-    <div id="language-switcher">
-      <a href="demo.html">UA</a> | <a href="demo-en.html" style="font-weight:bold;">EN</a>
-    </div>
+  <!-- Components -->
+  <div id="lang-switch"></div>
+  <div id="header"></div>
   <main>
+    <h2 style="color: #1b365d;text-align: center;">AIPolygraph-Demo</h2>
     <section>
       <h2>Enter your answer to the question:</h2>
       <p><em>Example: Have you ever been involved in government procurement tenders?</em></p>
@@ -35,31 +21,8 @@
     </section>
   </main>
 
-  <footer>
-    &copy; 2025 AIPolygraph. All rights reserved.
-  </footer>
-
-  <script>
-    function analyzeWithGPT() {
-      const answer = document.getElementById("userAnswer").value.trim();
-      if (!answer) {
-        alert("Please enter an answer to analyze.");
-        return;
-      }
-
-      const prompt = `
-      You are an AI polygraph. Analyze the subject's answer for signs of evasion, dishonesty, indirectness, or possible deception.
-      Question — AI Polygraph:
-      Have you ever been involved in government procurement tenders?
-      Answer — Subject:
-      "${answer}"
-
-      Conclusion:`;
-
-      const encodedPrompt = encodeURIComponent(prompt);
-      const gptUrl = `https://chat.openai.com/?model=gpt-4&prompt=${encodedPrompt}`;
-      window.open(gptUrl, '_blank');
-    }
-  </script>
+  <div id="footer"></div>
+  <!-- Script loading -->
+  <script src="layout.js"></script>
 </body>
 </html>
