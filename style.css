@@ -107,7 +107,7 @@ nav a:hover, .main-nav a:hover {
 .hero nav a: hover {
   color: #00ffc3;
 }
-.hero nav a: active {
+.hero-overlay nav a:active {
 font-weight: bold;
 }
 
@@ -293,6 +293,7 @@ footer {
     display: flex;
   }
 }
+
 
 
 
