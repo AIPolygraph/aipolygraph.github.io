@@ -111,7 +111,7 @@ nav a:hover, .main-nav a:hover {
   /* Псевдоклас — тимчасовий, коли тримаєш клік */
   .hero nav a:active {
     text-decoration: underline;    
-    font-weight: bold;
+   /* font-weight: bold;*/
   }
 
   /* Ось це потрібно для підсвічування поточної мови */
@@ -302,6 +302,7 @@ footer {
     display: flex;
   }
 }
+
 
 
 
