@@ -28,7 +28,7 @@ header {
   text-align: center;
 }
 .site-header {
-  background-color: #1b365d;
+  background-color: #111;
   color: white;
   padding: 10px 20px;
 }
@@ -298,6 +298,7 @@ footer {
     display: flex;
   }
 }
+
 
 
 
