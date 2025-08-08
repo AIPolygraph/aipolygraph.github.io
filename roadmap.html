@@ -7,25 +7,11 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-
-    <h1>Дорожня карта</h1>
-        <!-- Банер -->
-     <img src="AIPolygraph.png" alt="AIPolygraph Banner" style="width:30%; max-width:1000px; margin-top:20px; border-radius:10px;" />
-    <nav>
-      <a href="index.html">Головна</a>
-      <a href="demo.html">Демо</a>
-      <a href="roadmap.html">Дорожня карта</a>
-      <a href="contact.html">Контакти</a>
-      <a href="how-it-works.html">Як це працює</a>
-      <a href="faq.html" style="font-weight: bold;">FAQ</a>
-    </nav>
- </header>
-    <!-- Перемикач мов -->
-    <div id="language-switcher">
-      <a href="roadmap.html" style="font-weight:bold;">UA</a> | <a href="roadmap-en.html">EN</a>
-    </div> 
+  <!-- Components -->
+  <div id="lang-switch"></div>
+  <div id="header"></div>
   <main>
+    <h2 style="color: #1b365d;text-align: center;">Дорожня карта</h2>
     <section>
       <h2>Етапи реалізації</h2>
       <ul>
@@ -36,34 +22,8 @@
         <li>🏛 Презентація для державних органів</li>
       </ul>
     </section>
-  </main>
-
-    <!-- Зворотній зв'язок -->
-<div id="feedback-button" onclick="openFeedbackMenu()">✉️ Зворотній зв'язок</div>
-
-<div id="feedback-menu">
-  <a href="contact.html">📄 Контакти</a>
-  <a href="mailto:your@email.com">📧 Email</a>
-  <a href="https://t.me/intuitportal" target="_blank">💬 Telegram</a>
-</div>
-
-<script>
-  function openFeedbackMenu() {
-    const menu = document.getElementById("feedback-menu");
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
-  }
-
-  // Закривати меню при кліку поза ним
-  document.addEventListener("click", function(e) {
-    const menu = document.getElementById("feedback-menu");
-    const button = document.getElementById("feedback-button");
-    if (!menu.contains(e.target) && !button.contains(e.target)) {
-      menu.style.display = "none";
-    }
-  });
-</script>
-  <br />  <footer>
-    &copy; 2025 AIPolygraph. Всі права захищені.
-  </footer>
+  </main>  <div id="footer"></div>
+  <!-- Script loading -->
+  <script src="layout.js"></script>
 </body>
 </html>
