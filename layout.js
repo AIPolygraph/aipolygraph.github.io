@@ -20,14 +20,18 @@ function loadComponent(id, url) {
             if (overlay) overlay.classList.add("ready");
           }, 50);
         }
+
+        // Після вставки footer — ініціалізація кнопки зворотного зв'язку
+        if (id === "footer") {
+          setupFeedbackMenu();
+        }
       }
     })
     .catch(err => console.error(`Помилка завантаження ${url}:`, err));
 }
 
-
 function setupLangSwitcher() {
-  const current = window.location.pathname.split("/").pop(); // напр. demo-en.html
+  const current = window.location.pathname.split("/").pop();
   const isEnglish = current.includes("-en");
 
   const uaVersion = current.replace("-en", "");
@@ -48,25 +52,27 @@ function setupLangSwitcher() {
   }
 }
 
-/*feedback
-  function openFeedbackMenu() {
-    const menu = document.getElementById("feedback-menu");
+function setupFeedbackMenu() {
+  const button = document.getElementById("feedback-button");
+  const menu = document.getElementById("feedback-menu");
+
+  if (!button || !menu) return;
+
+  function toggleMenu() {
     menu.style.display = menu.style.display === "block" ? "none" : "block";
   }
 
-  document.getElementById("feedback-button").addEventListener("click", function (e) {
+  button.addEventListener("click", function (e) {
     e.stopPropagation();
-    openFeedbackMenu();
+    toggleMenu();
   });
 
   document.addEventListener("click", function (e) {
-    const menu = document.getElementById("feedback-menu");
-    const button = document.getElementById("feedback-button");
     if (!menu.contains(e.target) && !button.contains(e.target)) {
       menu.style.display = "none";
     }
   });
-*/
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   const isEnglish = window.location.pathname.includes("-en");
