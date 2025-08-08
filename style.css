@@ -70,7 +70,7 @@ nav a:hover, .main-nav a:hover {
 
 /* === HERO SECTION === */
 .hero {
-  background-color: #222;
+  background-color: #1b365d;
   color: white;
   padding: 40px 0;
 }
@@ -298,6 +298,7 @@ footer {
     display: flex;
   }
 }
+
 
 
 
