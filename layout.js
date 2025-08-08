@@ -73,7 +73,20 @@ function setupFeedbackMenu() {
     }
   });
 }
+// Додає клас активного пункту меню для поточної сторінки
+document.addEventListener("DOMContentLoaded", function () {
+    const currentPath = window.location.pathname; // поточний шлях, наприклад "/about.html"
+    const navLinks = document.querySelectorAll(".hero nav a");
 
+    navLinks.forEach(link => {
+        // Порівнюємо href без параметрів та хешів
+        const linkPath = new URL(link.href).pathname;
+        if (linkPath === currentPath) {
+            link.classList.add("active"); // додаємо клас
+        }
+    });
+});
+//
 document.addEventListener("DOMContentLoaded", () => {
   const isEnglish = window.location.pathname.includes("-en");
   const headerFile = isEnglish ? "header-en.html" : "header.html";
