@@ -48,7 +48,7 @@ function setupLangSwitcher() {
   }
 }
 
-//feedback
+/*feedback
   function openFeedbackMenu() {
     const menu = document.getElementById("feedback-menu");
     menu.style.display = menu.style.display === "block" ? "none" : "block";
@@ -66,8 +66,8 @@ function setupLangSwitcher() {
       menu.style.display = "none";
     }
   });
+*/
 
-//
 document.addEventListener("DOMContentLoaded", () => {
   const isEnglish = window.location.pathname.includes("-en");
   const headerFile = isEnglish ? "header-en.html" : "header.html";
