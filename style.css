@@ -95,7 +95,7 @@ nav a:hover, .main-nav a:hover {
   transform: translateX(-50%);
   text-align: center;
   max-width: 600px;
-  background: rgba(0, 0, 0, 0.5);
+  background: #1b365d;
   padding: 2rem;
   border-radius: 12px;
   animation: fadeIn 1s ease-in-out;
@@ -298,6 +298,7 @@ footer {
     display: flex;
   }
 }
+
 
 
 
