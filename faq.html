@@ -17,30 +17,17 @@
       cursor: pointer;
       font-weight: bold;
     }
-
     summary:hover {
       color: #007bff;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Frequently Asked Questions (FAQ)</h1>
-    <img src="AIPolygraph.png" alt="AIPolygraph Banner" style="width:30%; max-width:1000px; margin-top:20px; border-radius:10px;" />
-    <nav>
-      <a href="index.html">Головна</a>
-      <a href="demo.html">Демо</a>
-      <a href="roadmap.html">Дорожня карта</a>
-      <a href="contact.html">Контакти</a>
-      <a href="how-it-works.html">Як це працює</a>
-      <a href="faq.html" style="font-weight: bold;">FAQ</a>
-    </nav>
-  </header>
-    <!-- Перемикач мов -->
-    <div id="language-switcher">
-      <a href="faq.html" style="font-weight:bold;">UA</a> | <a href="faq-en.html">EN</a>
-    </div>
+  <!-- Компоненти -->
+  <div id="lang-switch"></div>
+  <div id="header-en"></div>
   <main>
+    <h2 style="color: #1b365d;text-align: center;">Часті запитання (FAQ)</h2>
     <section>
       <details>
         <summary>Що таке AIPolygraph?</summary>
@@ -77,10 +64,8 @@
         <p>У демо-версії дані не зберігаються. У повноцінній версії зберігання можливе лише за згодою користувача або за внутрішнім регламентом організації.</p>
       </details>
     </section>
-  </main>
-
-  <footer>
-    &copy; 2025 AIPolygraph. Всі права захищені.
-  </footer>
+  </main>  <div id="footer"></div>
+  <!-- Script loading -->
+  <script src="layout.js"></script>
 </body>
 </html>
