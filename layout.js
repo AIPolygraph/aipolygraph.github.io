@@ -75,7 +75,7 @@ function setupFeedbackMenu() {
 }
 // Додає клас активного пункту меню для поточної сторінки
 document.addEventListener("DOMContentLoaded", function () {
-    const currentPath = window.location.pathname.split("/").pop() || "index-en.html";  alert(currentPath);
+    const currentPath = window.location.pathname.split("/").pop();  alert(currentPath);
     const navLinks = document.querySelectorAll(".hero nav a");
 
     navLinks.forEach(link => {
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-//
+// || "index-en.html"
 document.addEventListener("DOMContentLoaded", () => {
   const isEnglish = window.location.pathname.includes("-en");
   const headerFile = isEnglish ? "header-en.html" : "header.html";
