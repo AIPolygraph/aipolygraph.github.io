@@ -171,6 +171,7 @@ nav a:hover, .main-nav a:hover {
   background: #f0f0f0;
 }
 
+
 /* === MODAL FORM === */
 #feedback-modal {
   display: none;
@@ -289,4 +290,5 @@ footer {
     display: flex;
   }
 }
+
 
