@@ -356,6 +356,78 @@ footer {
   }
 }
 
+/* Приховуємо кнопку на десктопах */
+.burger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Основне меню (desktop) */
+.main-nav {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Мобільне меню сховане */
+@media (max-width: 768px) {
+  /* Показуємо кнопку гамбургер */
+  .burger {
+    display: block;
+  }
+
+  /* Сховане меню за замовчуванням */
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    background: #1b365d;
+    position: absolute;
+    top: 100%; /* одразу під header */
+    left: 0;
+    right: 0;
+    border-radius: 0 0 12px 12px;
+    padding: 10px 0;
+    z-index: 1000;
+  }
+
+  /* Відкриваємо меню, коли додано клас .show */
+  .main-nav.show {
+    display: flex;
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  /* Стилі посилань в мобільному меню */
+  .main-nav a {
+    padding: 12px 20px;
+    margin: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    font-size: 1.1rem;
+  }
+  .main-nav a:last-child {
+    border-bottom: none;
+  }
+  .main-nav a:hover {
+    background-color: #00ffc3;
+    color: #1b365d;
+  }
+}
+
+/* Анімація відкриття меню */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 
 
