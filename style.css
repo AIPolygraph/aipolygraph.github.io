@@ -84,7 +84,7 @@ nav a:hover, .main-nav a:hover {
   margin-left: 10px;
 }
 .hero-banner img {
-  width: 295px;
+  width: 300px;
   height: auto;
   border-radius: 10px;
   display: block;
@@ -302,6 +302,7 @@ footer {
     display: flex;
   }
 }
+
 
 
 
