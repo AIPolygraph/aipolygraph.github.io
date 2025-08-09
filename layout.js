@@ -1,6 +1,6 @@
 // layout.js
 
-function loadComponent(id, url) {
+function loadComponent(id, url, callback) {
   fetch(url)
     .then(res => res.text())
     .then(data => {
@@ -19,11 +19,19 @@ function loadComponent(id, url) {
             const overlay = document.querySelector(".hero-overlay");
             if (overlay) overlay.classList.add("ready");
           }, 50);
+
+          // Тут підсвічуємо активне меню
+          highlightActiveMenu();
         }
 
-        // Після вставки footer — ініціалізація кнопки зворотного зв'язку
+        // Після вставки footer
         if (id === "footer") {
           setupFeedbackMenu();
+        }
+
+        // Якщо передано колбек — викликаємо
+        if (typeof callback === "function") {
+          callback();
         }
       }
     })
@@ -73,20 +81,19 @@ function setupFeedbackMenu() {
     }
   });
 }
-// Додає клас активного пункту меню для поточної сторінки
-document.addEventListener("DOMContentLoaded", function () {
-    const currentPath = window.location.pathname.split("/").pop();  alert(currentPath);
-    const navLinks = document.querySelectorAll(".hero nav a");
 
-    navLinks.forEach(link => {
-        const linkFile = link.getAttribute("href");
-        if (linkFile === currentPath) {
-            link.classList.add("active");
-        }
-    });
-});
+// Нова функція для підсвічування активного пункту меню
+function highlightActiveMenu() {
+  const currentPath = window.location.pathname.split("/").pop() || "index-en.html";
+  const navLinks = document.querySelectorAll(".hero nav a");
 
-// || "index-en.html"
+  navLinks.forEach(link => {
+    if (link.getAttribute("href") === currentPath) {
+      link.classList.add("active");
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const isEnglish = window.location.pathname.includes("-en");
   const headerFile = isEnglish ? "header-en.html" : "header.html";
