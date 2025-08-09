@@ -94,6 +94,27 @@ function highlightActiveMenu() {
   });
 }
 
+//гамбургер
+document.addEventListener('DOMContentLoaded', function() {
+  const burger = document.querySelector('.burger');
+  const menu = document.querySelector('.main-nav');
+
+  burger.addEventListener('click', () => {
+    const expanded = burger.getAttribute('aria-expanded') === 'true' || false;
+    burger.setAttribute('aria-expanded', !expanded);
+    menu.classList.toggle('show');
+  });
+
+  // Закриття меню при кліку поза меню (опціонально)
+  document.addEventListener('click', (e) => {
+    if (!burger.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove('show');
+      burger.setAttribute('aria-expanded', false);
+    }
+  });
+});
+//
+
 document.addEventListener("DOMContentLoaded", () => {
   const isEnglish = window.location.pathname.includes("-en");
   const headerFile = isEnglish ? "header-en.html" : "header.html";
