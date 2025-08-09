@@ -89,7 +89,17 @@ nav a:hover, .main-nav a:hover {
   border-radius: 10px;
   display: block;
 }
-
+.hero-overlay {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  max-width: 600px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 12px;
+  animation: fadeIn 1s ease-in-out;
+}
 .hero h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
@@ -281,6 +291,7 @@ footer {
     display: flex;
   }
 }
+
 
 
 
