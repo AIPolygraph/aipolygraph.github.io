@@ -76,16 +76,14 @@ nav a:hover, .main-nav a:hover {
 }
 .hero-wrapper {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  position: relative;
+  align-items: stretch;
 }
 .hero-banner {
   margin-left: 10px;
 }
 .hero-banner img {
-  width: 300px;
-  height: auto;
+  height: 100%;
+  width: auto;
   border-radius: 10px;
   display: block;
 }
@@ -301,6 +299,7 @@ footer {
     display: flex;
   }
 }
+
 
 
 
