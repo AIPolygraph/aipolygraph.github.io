@@ -70,7 +70,7 @@ nav a:hover, .main-nav a:hover {
 
 /* === HERO SECTION === */
 .hero {
-  background-color: #222;
+  background-color: #2B668F;
   color: white;
   padding: 40px 0;
 }
@@ -123,9 +123,21 @@ nav a:hover, .main-nav a:hover {
   text-decoration: none;
   font-weight: 500;
 }
-.hero nav a:hover {
-  color: #00ffc3;
-}
+  .hero nav a:hover {
+    color: #00ffc3;
+  }
+
+  /* Псевдоклас — тимчасовий, коли тримаєш клік */
+  .hero nav a:active {
+    text-decoration: underline;    
+   /* font-weight: bold;*/
+  }
+
+  /* Ось це потрібно для підсвічування поточної мови */
+  .hero nav a.active {
+    text-decoration: underline;
+    font-weight: bold;
+  }
 
 /* === FEEDBACK BUTTON & MENU === */
 #feedback-button {
@@ -290,5 +302,6 @@ footer {
     display: flex;
   }
 }
+
 
 
