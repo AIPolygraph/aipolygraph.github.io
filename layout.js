@@ -20,11 +20,8 @@ function loadComponent(id, url, callback) {
             if (overlay) overlay.classList.add("ready");
           }, 50);
 
-          // Підсвічуємо активне меню
+          // Тут підсвічуємо активне меню
           highlightActiveMenu();
-
-          // Ініціалізуємо бургер-меню
-          setupBurgerMenu();
         }
 
         // Після вставки footer
@@ -97,29 +94,6 @@ function highlightActiveMenu() {
   });
 }
 
-// Функція для ініціалізації бургер-меню (працює після завантаження header)
-function setupBurgerMenu() {
-  const burger = document.querySelector('.burger');
-  const menu = document.querySelector('.main-nav');
-
-  if (!burger || !menu) return;
-
-  burger.addEventListener('click', () => {
-    const expanded = burger.getAttribute('aria-expanded') === 'true' || false;
-    burger.setAttribute('aria-expanded', !expanded);
-    menu.classList.toggle('show');
-  });
-
-  // Закриття меню при кліку поза ним
-  document.addEventListener('click', (e) => {
-    if (!burger.contains(e.target) && !menu.contains(e.target)) {
-      menu.classList.remove('show');
-      burger.setAttribute('aria-expanded', false);
-    }
-  });
-}
-
-// Ініціалізація компонентів
 document.addEventListener("DOMContentLoaded", () => {
   const isEnglish = window.location.pathname.includes("-en");
   const headerFile = isEnglish ? "header-en.html" : "header.html";
