@@ -60,7 +60,7 @@ nav a:hover, .main-nav a:hover {
 }
 .main-nav {
   display: inline-flex;  /* inline-flex, щоб ширина була по вмісту */
-  gap: 15px;
+  gap: 15px;flex-wrap: wrap;
 }
 
 .main-nav a.active {
@@ -355,6 +355,7 @@ footer {
     font-size: 1rem;
   }
 }
+
 
 
 
