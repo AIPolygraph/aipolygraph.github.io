@@ -302,59 +302,6 @@ footer {
     display: flex;
   }
 }
-/* === RESPONSIVE-2 === */
-@media (max-width: 768px) {
-  .hero-wrapper {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0 15px;
-  }
-
-  .hero-banner {
-    margin: 0 0 20px 0;
-    width: 100%;
-    max-width: 320px;
-  }
-
-  .hero-banner img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-
-  .hero-overlay {
-    position: static;
-    transform: none !important;
-    max-width: 100%;
-    background: #1b365d;
-    padding: 1.5rem 1rem;
-    border-radius: 12px;
-    opacity: 1 !important;
-    text-align: center;
-  }
-
-  .hero h1 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .hero nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .hero nav a {
-    margin: 5px 8px;
-    font-size: 1rem;
-  }
-}
 
 
 
