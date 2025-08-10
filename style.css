@@ -70,7 +70,7 @@ nav a:hover, .main-nav a:hover {
 
 /* === HERO SECTION === */
 .hero {
-  background-color: #2B668F;
+  background-color: #222;
   color: white;
   padding: 40px 0;
 }
@@ -84,7 +84,7 @@ nav a:hover, .main-nav a:hover {
   margin-left: 10px;
 }
 .hero-banner img {
-  width: 320px;
+  width: 300px;
   height: auto;
   border-radius: 10px;
   display: block;
@@ -123,21 +123,9 @@ nav a:hover, .main-nav a:hover {
   text-decoration: none;
   font-weight: 500;
 }
-  .hero nav a:hover {
-    color: #00ffc3;
-  }
-
-  /* Псевдоклас — тимчасовий, коли тримаєш клік */
-  .hero nav a:active {
-    text-decoration: underline;    
-   /* font-weight: bold;*/
-  }
-
-  /* Ось це потрібно для підсвічування поточної мови */
-  .hero nav a.active {
-    text-decoration: underline;
-    font-weight: bold;
-  }
+.hero nav a:hover {
+  color: #00ffc3;
+}
 
 /* === FEEDBACK BUTTON & MENU === */
 #feedback-button {
@@ -182,7 +170,6 @@ nav a:hover, .main-nav a:hover {
 #feedback-menu a:hover {
   background: #f0f0f0;
 }
-
 
 /* === MODAL FORM === */
 #feedback-modal {
@@ -302,6 +289,3 @@ footer {
     display: flex;
   }
 }
-
-
-
