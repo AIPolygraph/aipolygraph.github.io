@@ -61,7 +61,7 @@ nav a:hover, .main-nav a:hover {
 .main-nav {
   display: flex;  
   gap: 15px;
- flex-wrap: wrap;
+/* flex-wrap: wrap;*/
   width: auto;
 }
 .main-nav a.active {
@@ -356,6 +356,7 @@ footer {
     font-size: 1rem;
   }
 }
+
 
 
 
