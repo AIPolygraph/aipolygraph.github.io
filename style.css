@@ -59,9 +59,12 @@ nav a:hover, .main-nav a:hover {
   text-decoration: underline;
 }
 .main-nav {
-  display: inline-flex;  /* inline-flex, щоб ширина була по вмісту */
-  gap: 15px;    /* flex-wrap: wrap;*/
+  display: inline-flex;
+  gap: 15px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
+
 
 .main-nav a.active {
   text-decoration: underline;
@@ -355,6 +358,7 @@ footer {
     font-size: 1rem;
   }
 }
+
 
 
 
