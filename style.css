@@ -59,11 +59,10 @@ nav a:hover, .main-nav a:hover {
   text-decoration: underline;
 }
 .main-nav {
-  /*display: flex;*/  display: inline-flex;
+  display: inline-flex;  /* inline-flex, щоб ширина була по вмісту */
   gap: 15px;
-/* flex-wrap: wrap;*/
-  width: auto;
 }
+
 .main-nav a.active {
   text-decoration: underline;
   color: #00bfff;
@@ -356,6 +355,7 @@ footer {
     font-size: 1rem;
   }
 }
+
 
 
 
