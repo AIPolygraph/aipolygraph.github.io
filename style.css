@@ -59,10 +59,10 @@ nav a:hover, .main-nav a:hover {
   text-decoration: underline;
 }
 .main-nav {
-  display: flex;
-  width: auto;
+  display: flex;  
   gap: 15px;
  flex-wrap: wrap;
+  width: auto;
 }
 .main-nav a.active {
   text-decoration: underline;
@@ -356,6 +356,7 @@ footer {
     font-size: 1rem;
   }
 }
+
 
 
 
